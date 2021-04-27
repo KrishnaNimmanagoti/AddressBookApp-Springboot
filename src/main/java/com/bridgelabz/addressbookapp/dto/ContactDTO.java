@@ -6,7 +6,7 @@ public class ContactDTO {
     private String lastName;
     private String address;
     
-	public String getFirstName() {
+    public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {

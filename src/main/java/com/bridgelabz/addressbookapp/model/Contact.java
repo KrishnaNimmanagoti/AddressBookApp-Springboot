@@ -14,39 +14,49 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 	private String firstName;
-    private String lastName;
-    private String address;
+	private String lastName;
     
-	public Contact() {
-    }
-
     public Contact(ContactDTO contact) {
         this.firstName = contact.getFirstName();
         this.lastName = contact.getLastName();
         this.address = contact.getAddress();
     }
     
-    public int getId() {
-		return id;
+    public String getFirstName() {
+		return firstName;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
 		return lastName;
 	}
 
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public String getAddress() {
 		return address;
 	}
 
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-    @Override
+	private String address;
+    
+	public Contact() {
+    }
+
+	@Override
 	public String toString() {
 		return "Contact [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address=" + address
 				+ "]";
 	}
-    
+	
+	
+ 
 }
