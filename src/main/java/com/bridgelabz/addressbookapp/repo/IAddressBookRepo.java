@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.bridgelabz.addressbookapp.model.Contact;
 
 @Repository
-public interface IAddressBookRepo extends JpaRepository<Contact, Integer>{
+public interface IAddressBookRepo extends JpaRepository<Contact, Integer> {
 
 }

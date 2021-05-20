@@ -7,56 +7,32 @@ import javax.persistence.Id;
 
 import com.bridgelabz.addressbookapp.dto.ContactDTO;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Data
+@NoArgsConstructor
 public class Contact {
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-	private String firstName;
-	private String lastName;
-    
-    public Contact(ContactDTO contact) {
-        this.firstName = contact.getFirstName();
-        this.lastName = contact.getLastName();
-        this.address = contact.getAddress();
-    }
-    
-    public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String fullName;
+	private String phone;
+	private String email;
 	private String address;
-    
-	public Contact() {
-    }
+	private String city;
+	private String state;
+	private String zip;
 
-	@Override
-	public String toString() {
-		return "Contact [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", address=" + address
-				+ "]";
+	public Contact(ContactDTO contactDTO) {
+		this.fullName = contactDTO.getFullName();
+		this.phone = contactDTO.getPhone();
+		this.email = contactDTO.getEmail();
+		this.address = contactDTO.getAddress();
+		this.city = contactDTO.getCity();
+		this.state = contactDTO.getState();
+		this.zip = contactDTO.getZip();
 	}
-	
-	
- 
 }

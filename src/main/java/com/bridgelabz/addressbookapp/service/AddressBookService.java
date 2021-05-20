@@ -66,10 +66,13 @@ public class AddressBookService implements IAddressBookService {
 	public Contact updateContact(ContactDTO contactDTO, Integer personId) {
 
 		return addressBookRepo.findById(personId).map(contact -> {
-			contact.setName(contactDTO.getName());
+			contact.setFullName(contactDTO.getFullName());
 			contact.setPhone(contactDTO.getPhone());
 			contact.setEmail(contactDTO.getEmail());
 			contact.setAddress(contactDTO.getAddress());
+			contact.setCity(contactDTO.getCity());
+			contact.setState(contactDTO.getState());
+			contact.setZip(contactDTO.getZip());
 			return this.addressBookRepo.save(contact);
 		}).orElseGet(() -> {
 			return this.addContact(contactDTO);
